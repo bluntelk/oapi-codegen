@@ -363,6 +363,8 @@ func resolveType(schema *openapi3.Schema, path []string, outSchema *Schema) erro
 			outSchema.GoType = "uint8"
 		} else if f == "uint" {
 			outSchema.GoType = "uint"
+		} else if f == "string" {
+			outSchema.GoType = "json.Number"
 		} else if f == "" {
 			outSchema.GoType = "int"
 		} else {
